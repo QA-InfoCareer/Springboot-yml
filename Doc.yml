@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  springbootcicd:
+    image: openjdk:17
+    container_name: springbootcicdyml
+    working_dir: /app
+    ports:
+      - "8071:8081"
+    volumes:
+      - ./target/springsample.jar:/app/springsample.jar
+    command: ["java", "-jar", "/app/springsample.jar"]
